@@ -19,7 +19,7 @@ public class actualizarPuntuacion : MonoBehaviour
     void Update()
     {
         txtPuntuacion.text = puntuacion.ToString();
-        
+        //prueba de github
 
     }
 
