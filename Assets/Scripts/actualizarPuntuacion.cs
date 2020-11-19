@@ -13,6 +13,8 @@ public class actualizarPuntuacion : MonoBehaviour
     void Start()
     {
         txtPuntuacion = GetComponent<Text> ();
+        puntuacion = 0;
+        
     }
 
     // Update is called once per frame

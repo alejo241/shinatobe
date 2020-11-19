@@ -12,6 +12,8 @@ public class ControlJuego : MonoBehaviour
     static public int nivelesDesbloqueados;
     public int nivelActual;
     public Button[] botonesMenu;
+    public int MeteoritosRestantes;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class ControlJuego : MonoBehaviour
         {
             ActualizarBotonesMenu();
         }
+
     }
 
     public void cambiarNivel(int nivel)
@@ -58,7 +61,7 @@ public class ControlJuego : MonoBehaviour
         volverMenu();
     }
 
-    void volverMenu()
+    public void volverMenu()
     {
         cambiarNivel(0);
     }

@@ -557,6 +557,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!61 &439442003
 BoxCollider2D:
@@ -862,6 +863,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!61 &551929582
 BoxCollider2D:
@@ -1009,6 +1011,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!61 &558341316
 BoxCollider2D:
@@ -1235,6 +1238,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!61 &676206131
 BoxCollider2D:
@@ -1470,6 +1474,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!1 &742074768
 GameObject:
@@ -1722,6 +1727,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!61 &796942176
 BoxCollider2D:
@@ -1847,6 +1853,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!61 &859991886
 BoxCollider2D:
@@ -2161,6 +2168,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 1
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!1 &949544689
 GameObject:
@@ -2392,6 +2400,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!1 &1143219230
 GameObject:
@@ -2872,6 +2881,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!1 &1306837908
 GameObject:
@@ -3098,6 +3108,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!1 &1429124928
 GameObject:
@@ -3157,6 +3168,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!61 &1429124931
 BoxCollider2D:
@@ -3425,6 +3437,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!1 &1629578458
 GameObject:
@@ -3463,6 +3476,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 1
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!61 &1629578460
 BoxCollider2D:
@@ -4085,6 +4099,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!1 &1796593524
 GameObject:
@@ -4525,6 +4540,7 @@ MonoBehaviour:
     type: 3}
   nivelTerminado: 0
   dino: 0
+  meteorito: 0
   txtPuntuacion: {fileID: 0}
 --- !u!1 &2010309407
 GameObject:

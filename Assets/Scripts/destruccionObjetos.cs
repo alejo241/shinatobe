@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,7 +13,7 @@ public class destruccionObjetos : MonoBehaviour
     public GameObject explosion;
     public static int EnemigosVivos = 0;
     public Boolean nivelTerminado = false;
-    public Boolean dino;
+    public Boolean dino; 
     public Text txtPuntuacion;
     ControlJuego controlJuego;
 
@@ -23,13 +24,20 @@ public class destruccionObjetos : MonoBehaviour
 
     private void Start()
     {
-
        
         if (dino)
         {
             EnemigosVivos++;
         }
+
+     
     }
+
+    private void Update()
+    {
+    
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -45,6 +53,7 @@ public class destruccionObjetos : MonoBehaviour
       
     }
 
+   
     public void Destruir(Collision2D collision)
     {
         if (collision.relativeVelocity.magnitude > resistenciaMaterial)
@@ -53,7 +62,7 @@ public class destruccionObjetos : MonoBehaviour
             if (explosion != null)
             {
                 var go = Instantiate(explosion, transform.position, Quaternion.identity);
-                actualizarPuntuacion.puntuacion += 500;
+               actualizarPuntuacion.puntuacion += 500;
                 Destroy(go, 3);
              
             }
@@ -66,6 +75,7 @@ public class destruccionObjetos : MonoBehaviour
         }
     }
 
+    [MethodImpl(MethodImplOptions.Synchronized)]
     public void DestruirDino(Collision2D collision)
     {
         if (collision.relativeVelocity.magnitude > resistenciaMaterial)
@@ -78,7 +88,7 @@ public class destruccionObjetos : MonoBehaviour
                 Destroy(go, 3);
 
                 EnemigosVivos--;
-                actualizarPuntuacion.puntuacion += 1000;
+               actualizarPuntuacion.puntuacion += 1000;
 
                 if (EnemigosVivos == 0)
                 {

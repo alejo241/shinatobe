@@ -290,7 +290,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &319891719
 GameObject:
@@ -2412,7 +2412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1143219231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2428,6 +2428,7 @@ MonoBehaviour:
   puntoMaximo: {fileID: 1222929474}
   rangoTirachinas: 1
   velocidadMaxima: 25
+  meteorito: 1
   siguienteMeteorito: {fileID: 0}
 --- !u!50 &1143219232
 Rigidbody2D:
@@ -2526,7 +2527,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160548937
 GameObject:
@@ -2633,6 +2634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nivelActual: 1
   botonesMenu: []
+  MeteoritosRestantes: 0
 --- !u!4 &1230139230
 Transform:
   m_ObjectHideFlags: 0
@@ -3275,7 +3277,7 @@ Transform:
   - {fileID: 653633365}
   - {fileID: 1222929474}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1606210743
 GameObject:
@@ -3569,7 +3571,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1674345312
 GameObject:
@@ -4164,7 +4166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1796593527
 Rigidbody2D:
@@ -4218,6 +4220,7 @@ MonoBehaviour:
   puntoMaximo: {fileID: 1222929474}
   rangoTirachinas: 1
   velocidadMaxima: 25
+  meteorito: 1
   siguienteMeteorito: {fileID: 1143219230}
 --- !u!1 &1837713822
 GameObject:
