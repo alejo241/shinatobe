@@ -16,6 +16,8 @@ public class destruccionObjetos : MonoBehaviour
     public Boolean dino; 
     public Text txtPuntuacion;
     ControlJuego controlJuego;
+   
+    
 
     public void Awake()
     {
@@ -25,32 +27,74 @@ public class destruccionObjetos : MonoBehaviour
     private void Start()
     {
        
-        if (dino)
+       
+        /*if (dino)
         {
-            EnemigosVivos++;
-        }
+            EnemigosVivos = dinosVivos.Length;
+        }*/
 
-     
+        
+
     }
 
     private void Update()
     {
-    
+
+
+
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (dino)
+
+        //collision.gameObject.tag == "dino"
+
+        /*if (dino)
         {
             DestruirDino(collision);
         }
         else
         {
             Destruir(collision);
+        }*/
+
+
+        if (collision.relativeVelocity.magnitude > resistenciaMaterial)
+        {
+
+            if (explosion != null)
+            {
+                var go = Instantiate(explosion, transform.position, Quaternion.identity);
+
+                Destroy(go, 3);
+
+                //EnemigosVivos--;
+              
+            }
+
+            Destroy(gameObject, 0.1f);
+
+            if (collision.gameObject.tag.Equals("dino"))
+            {
+                actualizarPuntuacion.puntuacion += 1000;              
+            }
+            else
+            {
+                actualizarPuntuacion.puntuacion += 500;
+            }
+
+            /*if (ControlJuego.Enemigos == 0)
+            {
+                controlJuego.DesbloquearNivel();
+            }*/
         }
-        
-      
+        else
+        {
+            resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
+        }
+
+
     }
 
    

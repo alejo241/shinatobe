@@ -1629,7 +1629,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 895b2295279b1a74ab162b26efe01a9a, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1641,7 +1641,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '0
+  m_Text: 'Score: 0
 
 '
 --- !u!222 &781468568
@@ -2030,7 +2030,7 @@ GameObject:
   - component: {fileID: 915651670}
   m_Layer: 0
   m_Name: dino-azul
-  m_TagString: Untagged
+  m_TagString: dino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2430,6 +2430,7 @@ MonoBehaviour:
   velocidadMaxima: 25
   meteorito: 1
   siguienteMeteorito: {fileID: 0}
+  meteoritoActual: {fileID: 0}
 --- !u!50 &1143219232
 Rigidbody2D:
   serializedVersion: 4
@@ -2634,7 +2635,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nivelActual: 1
   botonesMenu: []
-  MeteoritosRestantes: 0
+  dinosVivos:
+  - {fileID: 915651669}
+  - {fileID: 1629578458}
+  meteoritosRestantes:
+  - {fileID: 1796593524}
+  - {fileID: 1143219230}
 --- !u!4 &1230139230
 Transform:
   m_ObjectHideFlags: 0
@@ -2931,7 +2937,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 895b2295279b1a74ab162b26efe01a9a, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -3441,7 +3447,7 @@ GameObject:
   - component: {fileID: 1629578459}
   m_Layer: 0
   m_Name: dino-verde
-  m_TagString: Untagged
+  m_TagString: dino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4222,6 +4228,7 @@ MonoBehaviour:
   velocidadMaxima: 25
   meteorito: 1
   siguienteMeteorito: {fileID: 1143219230}
+  meteoritoActual: {fileID: 0}
 --- !u!1 &1837713822
 GameObject:
   m_ObjectHideFlags: 0
