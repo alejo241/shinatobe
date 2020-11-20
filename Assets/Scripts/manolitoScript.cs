@@ -96,14 +96,7 @@ public class manolitoScript : MonoBehaviour
         rb.velocity = -dis.normalized * velocidadMaxima *  (dis.magnitude / rangoTirachinas);//para lanzar el meteorito
        
 
-        if (siguienteMeteorito != null)
-        {
-           
-            StartCoroutine(Release());
-
-            
-        }
-
+      
         if(siguienteMeteorito != null)
         {
             StartCoroutine(Release());
