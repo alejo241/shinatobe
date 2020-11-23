@@ -20,8 +20,7 @@ public class actualizarPuntuacion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        txtPuntuacion.text = "Score: " + puntuacion.ToString();
-        //prueba de github
+        //txtPuntuacion.text = "Score: " + puntuacion.ToString();      
 
     }
 

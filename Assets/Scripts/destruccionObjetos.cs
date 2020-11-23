@@ -75,14 +75,7 @@ public class destruccionObjetos : MonoBehaviour
 
             Destroy(gameObject, 0.1f);
 
-            if (collision.gameObject.tag.Equals("dino"))
-            {
-                actualizarPuntuacion.puntuacion += 1000;              
-            }
-            else
-            {
-                actualizarPuntuacion.puntuacion += 500;
-            }
+        
 
             /*if (ControlJuego.Enemigos == 0)
             {
@@ -97,7 +90,19 @@ public class destruccionObjetos : MonoBehaviour
 
     }
 
-   
+
+    private void OnDestroy()
+    {
+        if (gameObject.tag.Equals("dino"))
+        {
+            actualizarPuntuacion.puntuacion += 1000;
+        }
+        else
+        {
+            actualizarPuntuacion.puntuacion += 500;
+        }
+    }
+
     public void Destruir(Collision2D collision)
     {
         if (collision.relativeVelocity.magnitude > resistenciaMaterial)
