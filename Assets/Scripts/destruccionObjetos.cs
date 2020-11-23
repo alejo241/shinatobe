@@ -16,14 +16,11 @@ public class destruccionObjetos : MonoBehaviour
     public Boolean dino; 
     public Text txtPuntuacion;
     ControlJuego controlJuego;
-<<<<<<< HEAD
+
     public GameObject siguienteDino;
     public GameObject actualDino;
     public float nuevaResis;
-=======
-   
-    
->>>>>>> 9ad86b34240614c5b2bc0a812dd35efc46425bcb
+
 
     public void Awake()
     {
