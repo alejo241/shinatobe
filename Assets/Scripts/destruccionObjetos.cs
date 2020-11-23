@@ -18,6 +18,7 @@ public class destruccionObjetos : MonoBehaviour
     ControlJuego controlJuego;
     public GameObject actualDino;
     public GameObject siguientedino;
+    public float resis;
   
    
     
@@ -51,17 +52,6 @@ public class destruccionObjetos : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        //collision.gameObject.tag == "dino"
-
-        /*if (dino)
-        {
-            DestruirDino(collision);
-        }
-        else
-        {
-            Destruir(collision);
-        }*/
-
 
         if (collision.relativeVelocity.magnitude > resistenciaMaterial)
         {
@@ -80,20 +70,19 @@ public class destruccionObjetos : MonoBehaviour
 
             
 
-            /*if (ControlJuego.Enemigos == 0)
-            {
-                controlJuego.DesbloquearNivel();
-            }*/
+         
         }
         else
         {
             resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
+            
 
             if(gameObject.tag == "dino" && resistenciaMaterial<99 && resistenciaMaterial > 0)
             {
-
+                siguientedino.GetComponent<destruccionObjetos>().resistenciaMaterial = resistenciaMaterial;
                 siguientedino.SetActive(true);
                 actualDino.SetActive(false);
+                
             }
 
 
