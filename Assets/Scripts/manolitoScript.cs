@@ -10,7 +10,6 @@ public class manolitoScript : MonoBehaviour
     public static int MeteoritosRestantes = 0;
     public Boolean meteorito;
     public GameObject siguienteMeteorito;
-    public GameObject meteoritoActual;
 
 
     bool lanzado = false;
@@ -28,7 +27,6 @@ public class manolitoScript : MonoBehaviour
 
     void Start()
     {
-        meteoritoActual = this.gameObject;
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
      
@@ -52,9 +50,8 @@ public class manolitoScript : MonoBehaviour
       
             if(rb.velocity.x < 0.1 && rb.velocity.y == 0 && lanzado)
             {
-
-            StartCoroutine(destruirMeteorito());
-           
+                Destroy(gameObject);
+                
                 if(MeteoritosRestantes == 0)
                 {
                 controlJuego.volverMenu();
@@ -93,7 +90,7 @@ public class manolitoScript : MonoBehaviour
             return;
         canDrag = false;
         lanzado = true;
-      
+        MeteoritosRestantes--;
 
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.velocity = -dis.normalized * velocidadMaxima *  (dis.magnitude / rangoTirachinas);//para lanzar el meteorito
@@ -111,16 +108,6 @@ public class manolitoScript : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         siguienteMeteorito.SetActive(true);
-        //Destroy(gameObject);
-
-
-    }
-
-    IEnumerator destruirMeteorito()
-    {
-        yield return new WaitForSeconds(2.0f);
-        // meteoritoActual.SetActive(false);
-        Destroy(meteoritoActual);
         //Destroy(gameObject);
 
 
