@@ -290,7 +290,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &319891719
 GameObject:
@@ -558,6 +558,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!61 &439442003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -863,6 +866,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!61 &551929582
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1010,6 +1016,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!61 &558341316
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1236,6 +1245,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!61 &676206131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1471,6 +1483,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!1 &742074768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1580,7 @@ RectTransform:
   - {fileID: 781468566}
   - {fileID: 361228660}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1629,7 +1644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 895b2295279b1a74ab162b26efe01a9a, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1641,7 +1656,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '0
+  m_Text: 'Score: 0
 
 '
 --- !u!222 &781468568
@@ -1723,6 +1738,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!61 &796942176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1848,6 +1866,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!61 &859991886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2162,6 +2183,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 1
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!1 &949544689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,6 +2417,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!1 &1143219230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2554,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160548937
 GameObject:
@@ -2647,7 +2674,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296282981
 GameObject:
@@ -2875,6 +2902,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!1 &1306837908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,7 +2961,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 895b2295279b1a74ab162b26efe01a9a, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -3099,6 +3129,109 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
+--- !u!1 &1399055967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399055969}
+  - component: {fileID: 1399055968}
+  - component: {fileID: 1399055970}
+  m_Layer: 0
+  m_Name: dino_50%
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &1399055968
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399055967}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3588b50f3cd3eef469cfaf7460666b60, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 16.56, y: 9.12}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1399055969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399055967}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.76, y: -4.14, z: 0}
+  m_LocalScale: {x: 1.7868689, y: 1.842, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1399055970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399055967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559ecae7abe268c40bdd5e4453e4fabf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resistenciaMaterial: 0
+  explosion: {fileID: 0}
+  nivelTerminado: 0
+  dino: 0
+  txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!1 &1429124928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,6 +3291,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!61 &1429124931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3277,7 +3413,7 @@ Transform:
   - {fileID: 653633365}
   - {fileID: 1222929474}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1606210743
 GameObject:
@@ -3426,6 +3562,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!1 &1629578458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3458,12 +3597,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559ecae7abe268c40bdd5e4453e4fabf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistenciaMaterial: 10
+  resistenciaMaterial: 100
   explosion: {fileID: 3739944013094052907, guid: ec4fc7b57d76e754fad57652d47fa79a,
     type: 3}
   nivelTerminado: 0
   dino: 1
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 1399055967}
+  actualDino: {fileID: 1629578458}
+  nuevaResis: 0
 --- !u!61 &1629578460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4086,6 +4228,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!1 &1796593524
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,7 +4311,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1796593527
 Rigidbody2D:
@@ -4527,6 +4672,9 @@ MonoBehaviour:
   nivelTerminado: 0
   dino: 0
   txtPuntuacion: {fileID: 0}
+  siguienteDino: {fileID: 0}
+  actualDino: {fileID: 0}
+  nuevaResis: 0
 --- !u!1 &2010309407
 GameObject:
   m_ObjectHideFlags: 0

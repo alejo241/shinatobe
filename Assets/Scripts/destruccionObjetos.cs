@@ -16,6 +16,9 @@ public class destruccionObjetos : MonoBehaviour
     public Boolean dino; 
     public Text txtPuntuacion;
     ControlJuego controlJuego;
+    public GameObject siguienteDino;
+    public GameObject actualDino;
+    public float nuevaResis;
 
     public void Awake()
     {
@@ -101,6 +104,16 @@ public class destruccionObjetos : MonoBehaviour
         else
         {
             resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
+
+            nuevaResis = resistenciaMaterial;
+
+            if(resistenciaMaterial < 99 && resistenciaMaterial > 0)
+            {
+                actualDino.SetActive(false);
+                siguienteDino.SetActive(true);
+
+                resistenciaMaterial = nuevaResis;
+            }
         }
     }
 }
