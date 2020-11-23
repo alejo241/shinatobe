@@ -16,6 +16,9 @@ public class destruccionObjetos : MonoBehaviour
     public Boolean dino; 
     public Text txtPuntuacion;
     ControlJuego controlJuego;
+    public GameObject actualDino;
+    public GameObject siguientedino;
+  
    
     
 
@@ -75,14 +78,7 @@ public class destruccionObjetos : MonoBehaviour
 
             Destroy(gameObject, 0.1f);
 
-            if (collision.gameObject.tag.Equals("dino"))
-            {
-                actualizarPuntuacion.puntuacion += 1000;              
-            }
-            else
-            {
-                actualizarPuntuacion.puntuacion += 500;
-            }
+            
 
             /*if (ControlJuego.Enemigos == 0)
             {
@@ -92,12 +88,33 @@ public class destruccionObjetos : MonoBehaviour
         else
         {
             resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
+
+            if(gameObject.tag == "dino" && resistenciaMaterial<99 && resistenciaMaterial > 0)
+            {
+
+                siguientedino.SetActive(true);
+                actualDino.SetActive(false);
+            }
+
+
         }
 
 
     }
 
-   
+    private void OnDestroy()
+    {
+        if (gameObject.tag == "dino")
+        {
+            actualizarPuntuacion.puntuacion += 25000;
+        }
+        else
+        {
+            actualizarPuntuacion.puntuacion += 500;
+        }
+    }
+
+
     public void Destruir(Collision2D collision)
     {
         if (collision.relativeVelocity.magnitude > resistenciaMaterial)
@@ -119,7 +136,7 @@ public class destruccionObjetos : MonoBehaviour
         }
     }
 
-    [MethodImpl(MethodImplOptions.Synchronized)]
+    /*[MethodImpl(MethodImplOptions.Synchronized)]
     public void DestruirDino(Collision2D collision)
     {
         if (collision.relativeVelocity.magnitude > resistenciaMaterial)
@@ -132,7 +149,7 @@ public class destruccionObjetos : MonoBehaviour
                 Destroy(go, 3);
 
                 EnemigosVivos--;
-               actualizarPuntuacion.puntuacion += 1000;
+               actualizarPuntuacion.puntuacion += 25000;
 
                 if (EnemigosVivos == 0)
                 {
@@ -145,6 +162,8 @@ public class destruccionObjetos : MonoBehaviour
         else
         {
             resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
+
+           
         }
-    }
+    }*/
 }
