@@ -18,7 +18,7 @@ public class destruccionObjetos : MonoBehaviour
     ControlJuego controlJuego;
     public GameObject actualDino;
     public GameObject siguientedino;
-    public float resis;
+
   
    
     
@@ -31,14 +31,6 @@ public class destruccionObjetos : MonoBehaviour
     private void Start()
     {
        
-       
-        /*if (dino)
-        {
-            EnemigosVivos = dinosVivos.Length;
-        }*/
-
-        
-
     }
 
     private void Update()
