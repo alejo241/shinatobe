@@ -20,7 +20,11 @@ public class ControlJuego : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Enemigos = dinosVivos.Length;
+        if(dinosVivos != null)
+        {
+            Enemigos = dinosVivos.Length;
+        }
+      
     }
 
     // Update is called once per frame
@@ -31,46 +35,56 @@ public class ControlJuego : MonoBehaviour
             ActualizarBotonesMenu();
         }
 
-        if (dinosVivos.Length > 0)
+        if(dinosVivos != null)
         {
-            int c = 0;
-            for (int i = 0; i < dinosVivos.Length; i++)
+            if (dinosVivos.Length > 0)
             {
-
-                if (dinosVivos[i] == null)
-                {
-                    c++;
-                }
-
-                if (c == dinosVivos.Length)
+                int c = 0;
+                for (int i = 0; i < dinosVivos.Length; i++)
                 {
 
-                    DesbloquearNivel();
+                    if (dinosVivos[i] == null)
+                    {
+                        c++;
+                    }
+
+                    if (c == dinosVivos.Length)
+                    {
+
+                        DesbloquearNivel();
+                    }
                 }
             }
+
         }
 
-        if (meteoritosRestantes.Length > 0)
+        if(meteoritosRestantes != null)
         {
-            int c = 0;
-            for (int i = 0; i < dinosVivos.Length; i++)
+
+            if (meteoritosRestantes.Length > 0)
             {
-
-                if (meteoritosRestantes[i] == null)
-                {
-                    c++;
-                }
-
-                if (c == meteoritosRestantes.Length)
+                int c = 0;
+                for (int i = 0; i < dinosVivos.Length; i++)
                 {
 
-                    StartCoroutine(derrota());
+                    if (meteoritosRestantes[i] == null)
+                    {
+                        c++;
+                    }
 
+                    if (c == meteoritosRestantes.Length)
+                    {
+
+                        StartCoroutine(derrota());
+
+                    }
                 }
+
+
             }
-                
-
         }
+      
+
     }
 
     IEnumerator derrota()

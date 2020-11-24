@@ -26,19 +26,12 @@ public class destruccionObjetos : MonoBehaviour
 
     private void Start()
     {
-       
-       
+
+
         /*if (dino)
         {
             EnemigosVivos = dinosVivos.Length;
         }*/
-
-        
-
-    }
-
-    private void Update()
-    {
 
 
 
