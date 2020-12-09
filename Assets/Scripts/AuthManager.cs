@@ -4,8 +4,7 @@ using UnityEngine;
 using Firebase;
 using Firebase.Auth;
 using TMPro;
-
-
+using UnityEditor.PackageManager;
 
 public class AuthManager : MonoBehaviour
 {
@@ -19,21 +18,26 @@ public class AuthManager : MonoBehaviour
     [Header("Login")]
     public TMP_InputField inputFieldCorreo;
     public TMP_InputField inputFieldContraseña;
-   
+    public TMP_Text errorLogin;
+
     //Register variables
     [Header("Register")]
     public TMP_InputField inputFieldRegistroCorreo;
     public TMP_InputField inputFieldRegistroContraseña;
     public TMP_InputField inputFieldRegistroContraseñaConfirm;
+    public TMP_Text errorRegistro;
 
 
     //Otras variables
     [Header("Otras variables")]
     public ControlJuego controlJuego;
-    public TMP_Text error;
+  
 
     void Awake()
     {
+        errorLogin.text = "";
+        errorRegistro.text = "";
+
         //comprobar que existen todas las dependencias de firebase
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
@@ -71,6 +75,7 @@ public class AuthManager : MonoBehaviour
         }
         else
         {
+            errorLogin.text = "Usuario y/o contraseña incorrecta";
             Debug.Log("Usuario y/o contraseña incorrecta");
         }
 
@@ -105,6 +110,7 @@ public class AuthManager : MonoBehaviour
         }
         else
         {
+            errorRegistro.text = "Las contraseñas no coinciden";
             Debug.Log("pass error");
         }
     }    
