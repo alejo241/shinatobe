@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "428453439645",
+    "project_id": "shinatobe-e12f8",
+    "storage_bucket": "shinatobe-e12f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428453439645:android:9ca9b3d61ae092828f8c74",
+        "android_client_info": {
+          "package_name": "com.Company.ProductName"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428453439645-edl0pnl1851gd24q4r15p82vhnt2l11u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfk3hapAecSaFTmt5QMM_q6pAW61v5SaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428453439645-edl0pnl1851gd24q4r15p82vhnt2l11u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
