@@ -30,6 +30,7 @@ public class AuthManager : MonoBehaviour
     //Otras variables
     [Header("Otras variables")]
     public ControlJuego controlJuego;
+    public TMP_Text error;
 
     void Awake()
     {
@@ -67,6 +68,10 @@ public class AuthManager : MonoBehaviour
         if(LoginTask.Exception == null)
         {
             controlJuego.volverMenu();
+        }
+        else
+        {
+            Debug.Log("Usuario y/o contraseña incorrecta");
         }
 
     }
