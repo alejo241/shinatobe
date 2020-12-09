@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 9f2edbf81053418f879076c05f816dc2
+guid: 4cdcfd9bbdaf02d4a8a9ce4036831c88
 labels:
 - gvh
-- gvh_targets-editor
-- gvh_version-7.0.0
-- gvhp_exportpath-Firebase/Editor/Firebase.Editor.dll
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2

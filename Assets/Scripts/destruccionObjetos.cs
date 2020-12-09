@@ -18,10 +18,13 @@ public class destruccionObjetos : MonoBehaviour
     ControlJuego controlJuego;
     public GameObject actualDino;
     public GameObject siguientedino;
-
-  
-   
+    public GameObject ultimoDino;
+    int cont = 0;
     
+
+
+
+
 
     public void Awake()
     {
@@ -69,13 +72,26 @@ public class destruccionObjetos : MonoBehaviour
             resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
             
 
-            if(gameObject.tag == "dino" && resistenciaMaterial<99 && resistenciaMaterial > 0)
+            if(gameObject.tag == "dino" && resistenciaMaterial<=99 && resistenciaMaterial >= 80)
             {
                 siguientedino.GetComponent<destruccionObjetos>().resistenciaMaterial = resistenciaMaterial;
                 siguientedino.SetActive(true);
                 actualDino.SetActive(false);
-                
+                Debug.Log("Primer cambio");
+
+
             }
+
+            if (gameObject.tag == "dino" && resistenciaMaterial < 80)
+            {
+                ultimoDino.GetComponent<destruccionObjetos>().resistenciaMaterial = resistenciaMaterial;
+                ultimoDino.SetActive(true);
+                actualDino.SetActive(false);
+                Debug.Log("Segundo cambio");
+
+            }
+
+
 
 
         }

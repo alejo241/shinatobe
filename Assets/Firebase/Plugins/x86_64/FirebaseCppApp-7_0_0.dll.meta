@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: 7a44a4c065434868b7cb76f8a57e774b
+guid: 32ea38458a7372f489df4a733f545919
 labels:
 - gvh
-- gvh_version-7.0.0
-- gvhp_exportpath-Firebase/Plugins/x86_64/FirebaseCppApp-7_0_0.dll
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -16,46 +14,17 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
-      '': OSXIntel
-    second:
-      enabled: 0
-      settings:
-        CPU: None
-  - first:
-      '': OSXIntel64
-    second:
-      enabled: 0
-      settings:
-        CPU: None
-  - first:
-      '': Web
-    second:
-      enabled: 0
-      settings: {}
-  - first:
-      '': WebStreamed
-    second:
-      enabled: 0
-      settings: {}
-  - first:
-      Android: Android
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-  - first:
       Any: 
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       Editor: Editor
     second:
-      enabled: 1
+      enabled: 0
       settings:
-        CPU: AnyCPU
+        CPU: x86_64
         DefaultValueInitialized: true
-        OS: AnyOS
   - first:
       Facebook: Win
     second:
@@ -77,21 +46,21 @@ PluginImporter:
   - first:
       Standalone: Linux64
     second:
-      enabled: 0
+      enabled: 1
       settings:
-        CPU: None
+        CPU: x86_64
   - first:
       Standalone: LinuxUniversal
     second:
-      enabled: 0
+      enabled: 1
       settings:
-        CPU: None
+        CPU: x86_64
   - first:
       Standalone: OSXUniversal
     second:
       enabled: 0
       settings:
-        CPU: None
+        CPU: x86_64
   - first:
       Standalone: Win
     second:
@@ -104,19 +73,6 @@ PluginImporter:
       enabled: 1
       settings:
         CPU: AnyCPU
-  - first:
-      Windows Store Apps: WindowsStoreApps
-    second:
-      enabled: 0
-      settings:
-        CPU: AnyCPU
-  - first:
-      iPhone: iOS
-    second:
-      enabled: 0
-      settings:
-        CompileFlags: 
-        FrameworkDependencies: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
