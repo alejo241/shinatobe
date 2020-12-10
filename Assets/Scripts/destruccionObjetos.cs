@@ -78,9 +78,14 @@ public class destruccionObjetos : MonoBehaviour
             }
             if (gameObject.tag == "dino" && resistenciaMaterial < 25)
             {
-                ultimoDino.GetComponent<destruccionObjetos>().resistenciaMaterial = resistenciaMaterial;
-                ultimoDino.SetActive(true);
-                actualDino.SetActive(false);
+                if(ultimoDino  != null)
+                {
+                    ultimoDino.GetComponent<destruccionObjetos>().resistenciaMaterial = resistenciaMaterial;
+                    ultimoDino.SetActive(true);
+                    actualDino.SetActive(false);
+
+                }
+             
                 
 
             }

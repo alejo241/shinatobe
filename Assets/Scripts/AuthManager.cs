@@ -56,7 +56,6 @@ public class AuthManager : MonoBehaviour
 
     public void LoginButton()
     {
-        //Call the login coroutine passing the email and password
         StartCoroutine(Login());
     }
 
