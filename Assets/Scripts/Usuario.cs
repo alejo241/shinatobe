@@ -4,27 +4,15 @@ using UnityEngine;
 
 public class Usuario
 {
-    int nivelesSuperados;
+    public int nivelesSuperados;
+
+    public Usuario()
+    {
+    }
 
     public Usuario(int nivelesSuperados)
     {
-        this.nivelesSuperados = nivelesSuperados;
+        this.nivelesSuperados = nivelesSuperados;   
     }
-
-    public int NivelesSuperados
-    {
-        get
-        {
-            return nivelesSuperados;
-        }
-        set
-        {
-            nivelesSuperados = value;
-        }
-        
-    }
-
-
-
 
 }

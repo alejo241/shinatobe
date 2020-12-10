@@ -6,7 +6,8 @@ using Firebase.Auth;
 using Firebase.Extensions;
 using TMPro;
 using UnityEditor.PackageManager;
-using Firebase.Storage;
+using Firebase.Database;
+using UnityEngine.Events;
 
 public class AuthManager : MonoBehaviour
 {
@@ -32,12 +33,14 @@ public class AuthManager : MonoBehaviour
 
     //base de datos
     [Header("Database")]
-    private FirebaseStorage firebase;
+    DatabaseReference reference;
 
 
 
-    //Otras variables
-    [Header("Otras variables")]
+
+
+//Otras variables
+[Header("Otras variables")]
     public ControlJuego controlJuego;
     Usuario usuario;
     
@@ -56,11 +59,14 @@ public class AuthManager : MonoBehaviour
             {
                 //si existen
                 auth = FirebaseAuth.DefaultInstance;
+                reference = FirebaseDatabase.DefaultInstance.RootReference;
+
             }
             else
             {
                 Debug.LogError("No estan disponible las dependencias: " + dependencyStatus);
             }
+            
         });
     }
 
@@ -80,6 +86,10 @@ public class AuthManager : MonoBehaviour
         //si no hay errores
         if(LoginTask.Exception == null)
         {
+            Usuario usuario = new Usuario(4);
+            string json = JsonUtility.ToJson(usuario);
+            var prueba = reference.Child("users").SetRawJsonValueAsync(json);
+            yield return new WaitUntil(() => prueba.IsCompleted);
             controlJuego.volverMenu();
            
             
