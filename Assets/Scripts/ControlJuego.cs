@@ -16,6 +16,9 @@ public class ControlJuego : MonoBehaviour
     public GameObject[] dinosVivos;
     public GameObject[] meteoritosRestantes;
     public static int Meteoritos;
+    public GameObject menuPerder;
+    public GameObject menuGanar;
+    public bool seguir = true;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +54,16 @@ public class ControlJuego : MonoBehaviour
 
                     if (c == dinosVivos.Length)
                     {
+<<<<<<< HEAD
                         DesbloquearNivel();
+=======
+                        if (seguir)
+                        {
+                            DesbloquearNivel();
+                            menuGanar.SetActive(true);
+                        }
+
+>>>>>>> a089df3cc677bfc3025494e34c921ff4c82e531e
                     }
                 }
             }
@@ -74,7 +86,7 @@ public class ControlJuego : MonoBehaviour
                     {
 
                         StartCoroutine(derrota());
-
+                        
                     }
                 }
             }
@@ -85,8 +97,8 @@ public class ControlJuego : MonoBehaviour
     IEnumerator derrota()
     {
         yield return new WaitForSeconds(2.0f);
-
-        volverMenu();
+        menuPerder.SetActive(true);
+        //volverMenu();
     }
 
     public void cambiarNivel(int nivel)
@@ -117,13 +129,24 @@ public class ControlJuego : MonoBehaviour
         {
             nivelesDesbloqueados = nivelActual;
             nivelActual++;
+            seguir = false;
         }
+<<<<<<< HEAD
 
         volverMenu();
+=======
+        
+>>>>>>> a089df3cc677bfc3025494e34c921ff4c82e531e
     }
 
     public void volverMenu()
     {
         cambiarNivel(0);
+    }
+
+    public void mismoNivel()
+    {
+
+        SceneManager.LoadScene(nivelActual);
     }
 }
