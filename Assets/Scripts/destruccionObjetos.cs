@@ -56,7 +56,7 @@ public class destruccionObjetos : MonoBehaviour
 
                 Destroy(go, 3);
 
-                //EnemigosVivos--;
+           
               
             }
 
