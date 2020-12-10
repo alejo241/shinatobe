@@ -57,7 +57,7 @@ public class manolitoScript : MonoBehaviour
            
                 if(MeteoritosRestantes == 0)
                 {
-                controlJuego.volverMenu();
+                //controlJuego.volverMenu();
                 }
             }
         

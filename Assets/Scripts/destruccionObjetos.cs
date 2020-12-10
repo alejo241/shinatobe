@@ -121,7 +121,7 @@ public class destruccionObjetos : MonoBehaviour
             if (explosion != null)
             {
                 var go = Instantiate(explosion, transform.position, Quaternion.identity);
-               actualizarPuntuacion.puntuacion += 500;
+               //actualizarPuntuacion.puntuacion += 500;
                 Destroy(go, 3);
              
             }
