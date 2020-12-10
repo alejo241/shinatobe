@@ -68,14 +68,18 @@ public class destruccionObjetos : MonoBehaviour
         {
             resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
             
-
-            if(gameObject.tag == "dino" && resistenciaMaterial<49 && resistenciaMaterial >= 25)
+            if(siguientedino != null)
             {
-                siguientedino.GetComponent<destruccionObjetos>().resistenciaMaterial = resistenciaMaterial;
-                siguientedino.SetActive(true);
-                actualDino.SetActive(false);
-                
+                if (gameObject.tag == "dino" && resistenciaMaterial < 49 && resistenciaMaterial >= 25)
+                {
+                    siguientedino.GetComponent<destruccionObjetos>().resistenciaMaterial = resistenciaMaterial;
+                    siguientedino.SetActive(true);
+                    actualDino.SetActive(false);
+
+                }
             }
+         
+          
             if (gameObject.tag == "dino" && resistenciaMaterial < 25)
             {
                 if(ultimoDino  != null)

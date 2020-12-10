@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
+using Firebase.Extensions;
 using TMPro;
 using UnityEditor.PackageManager;
+using Firebase.Storage;
 
 public class AuthManager : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class AuthManager : MonoBehaviour
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
     public FirebaseAuth auth;
+    public FirebaseUser userFU;
 
     //Login variables
     [Header("Login")]
@@ -27,10 +30,17 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField inputFieldRegistroContraseñaConfirm;
     public TMP_Text errorRegistro;
 
+    //base de datos
+    [Header("Database")]
+    private FirebaseStorage firebase;
+
+
 
     //Otras variables
     [Header("Otras variables")]
     public ControlJuego controlJuego;
+    Usuario usuario;
+    
   
 
     void Awake()
@@ -71,6 +81,8 @@ public class AuthManager : MonoBehaviour
         if(LoginTask.Exception == null)
         {
             controlJuego.volverMenu();
+           
+            
         }
         else
         {
@@ -98,7 +110,7 @@ public class AuthManager : MonoBehaviour
         {
             //si no hay errores
             if (registroTask.Exception == null)
-            {
+            {   
                 controlJuego.volverMenu();
             }
             else

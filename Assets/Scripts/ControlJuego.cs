@@ -51,7 +51,6 @@ public class ControlJuego : MonoBehaviour
 
                     if (c == dinosVivos.Length)
                     {
-
                         DesbloquearNivel();
                     }
                 }
@@ -113,11 +112,13 @@ public class ControlJuego : MonoBehaviour
 
     public void DesbloquearNivel()
     {
+
         if (nivelesDesbloqueados < nivelActual)
         {
             nivelesDesbloqueados = nivelActual;
             nivelActual++;
         }
+
         volverMenu();
     }
 
