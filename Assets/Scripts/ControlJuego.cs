@@ -54,16 +54,13 @@ public class ControlJuego : MonoBehaviour
 
                     if (c == dinosVivos.Length)
                     {
-<<<<<<< HEAD
                         DesbloquearNivel();
-=======
                         if (seguir)
                         {
                             DesbloquearNivel();
                             menuGanar.SetActive(true);
                         }
 
->>>>>>> a089df3cc677bfc3025494e34c921ff4c82e531e
                     }
                 }
             }
@@ -131,12 +128,9 @@ public class ControlJuego : MonoBehaviour
             nivelActual++;
             seguir = false;
         }
-<<<<<<< HEAD
 
         volverMenu();
-=======
         
->>>>>>> a089df3cc677bfc3025494e34c921ff4c82e531e
     }
 
     public void volverMenu()
