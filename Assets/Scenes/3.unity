@@ -311,7 +311,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4256,7 +4256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac464106032cac94084d091072cc407d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nivelActual: 2
+  nivelActual: 3
   botonesMenu: []
   dinosVivos:
   - {fileID: 800799369}
@@ -4811,7 +4811,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Nivel 2
+  m_Text: 'Nivel 3
 
 '
 --- !u!222 &1306837911

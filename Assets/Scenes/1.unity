@@ -3786,7 +3786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntoMaximo: {fileID: 1222929474}
   rangoTirachinas: 1
-  velocidadMaxima: 25
+  velocidadMaxima: 50
   meteorito: 1
   siguienteMeteorito: {fileID: 0}
   meteoritoActual: {fileID: 0}
@@ -4259,7 +4259,7 @@ MonoBehaviour:
   nivelActual: 1
   botonesMenu: []
   dinosVivos:
-  - {fileID: 1629578458}
+  - {fileID: 800799369}
   - {fileID: 939961279}
   meteoritosRestantes:
   - {fileID: 1796593524}
@@ -5335,7 +5335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559ecae7abe268c40bdd5e4453e4fabf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resistenciaMaterial: 0.1
+  resistenciaMaterial: 50
   explosion: {fileID: 3739944013094052907, guid: ec4fc7b57d76e754fad57652d47fa79a,
     type: 3}
   nivelTerminado: 0
@@ -6559,7 +6559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntoMaximo: {fileID: 1222929474}
   rangoTirachinas: 1
-  velocidadMaxima: 25
+  velocidadMaxima: 50
   meteorito: 1
   siguienteMeteorito: {fileID: 1143219230}
   meteoritoActual: {fileID: 0}

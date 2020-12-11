@@ -86,7 +86,11 @@ public class destruccionObjetos : MonoBehaviour
                 {
                     ultimoDino.GetComponent<destruccionObjetos>().resistenciaMaterial = resistenciaMaterial;
                     ultimoDino.SetActive(true);
-                    actualDino.SetActive(false);
+                    if(actualDino != null)
+                    {
+                        actualDino.SetActive(false);
+                    }
+                   
 
                 }
              

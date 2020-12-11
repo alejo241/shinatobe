@@ -1051,6 +1051,9 @@ MonoBehaviour:
   botonesMenu: []
   dinosVivos: []
   meteoritosRestantes: []
+  menuPerder: {fileID: 0}
+  menuGanar: {fileID: 0}
+  seguir: 1
 --- !u!4 &425989964
 Transform:
   m_ObjectHideFlags: 0
@@ -4160,6 +4163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loginPantalla: {fileID: 456218808}
   registroPantalla: {fileID: 1380656555}
+  errorLogin: {fileID: 1802945443}
+  errorRegistro: {fileID: 1693514512}
 --- !u!4 &1764349078
 Transform:
   m_ObjectHideFlags: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using JetBrains.Annotations;
+using Firebase.Database;
+using Firebase;
 
 public class ControlJuego : MonoBehaviour
 {
@@ -19,6 +21,40 @@ public class ControlJuego : MonoBehaviour
     public GameObject menuPerder;
     public GameObject menuGanar;
     public bool seguir = true;
+
+    static public string userid;
+
+    //base de datos
+    [Header("Database")]
+    DatabaseReference reference;
+
+
+    private void Awake()
+    {              
+
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            FirebaseDatabase.DefaultInstance.GetReference("users").Child(userid).GetValueAsync().ContinueWith(task =>
+            {
+                if (task.IsCompleted)
+                {
+                    
+                    DataSnapshot snapshot = task.Result;
+                    
+                 
+                   nivelesDesbloqueados =  int.Parse(snapshot.Child("nivelesSuperados").GetRawJsonValue());
+
+
+
+                    ActualizarBotonesMenu();
+                }
+            });
+           
+        }
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -54,13 +90,17 @@ public class ControlJuego : MonoBehaviour
 
                     if (c == dinosVivos.Length)
                     {
-                        
+
                         if (seguir)
                         {
+                            Usuario usuario = new Usuario(nivelesDesbloqueados+1);
+                            string json = JsonUtility.ToJson(usuario);
+                            var prueba = reference.Child("users").Child(userid).SetRawJsonValueAsync(json);
+                           
+
                             DesbloquearNivel();
                             menuGanar.SetActive(true);
                         }
-
                     }
                 }
             }

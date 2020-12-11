@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Usuario
 {
+    //public string correo;
     public int nivelesSuperados;
 
     public Usuario()
@@ -11,7 +12,7 @@ public class Usuario
     }
 
     public Usuario(int nivelesSuperados)
-    {
+    {      
         this.nivelesSuperados = nivelesSuperados;   
     }
 

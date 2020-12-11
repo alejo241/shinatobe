@@ -31,9 +31,7 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField inputFieldRegistroContraseñaConfirm;
     public TMP_Text errorRegistro;
 
-    //base de datos
-    [Header("Database")]
-    DatabaseReference reference;
+ 
 
 
 
@@ -59,7 +57,7 @@ public class AuthManager : MonoBehaviour
             {
                 //si existen
                 auth = FirebaseAuth.DefaultInstance;
-                reference = FirebaseDatabase.DefaultInstance.RootReference;
+             
 
             }
             else
@@ -72,6 +70,7 @@ public class AuthManager : MonoBehaviour
 
     public void LoginButton()
     {
+        errorLogin.text = "";
         StartCoroutine(Login());
     }
 
@@ -86,12 +85,9 @@ public class AuthManager : MonoBehaviour
         //si no hay errores
         if(LoginTask.Exception == null)
         {
-            Usuario usuario = new Usuario(4);
-            string json = JsonUtility.ToJson(usuario);
-            var prueba = reference.Child("users").SetRawJsonValueAsync(json);
-            yield return new WaitUntil(() => prueba.IsCompleted);
+            ControlJuego.userid = auth.CurrentUser.UserId;
             controlJuego.volverMenu();
-           
+         
             
         }
         else
@@ -104,7 +100,8 @@ public class AuthManager : MonoBehaviour
 
     public void registroButton()
     {
-        //Call the login coroutine passing the email and password
+
+        errorRegistro.text = "";
         StartCoroutine(Registro());
     }
 
@@ -120,12 +117,18 @@ public class AuthManager : MonoBehaviour
         {
             //si no hay errores
             if (registroTask.Exception == null)
-            {   
+            {
+                ControlJuego.userid = auth.CurrentUser.UserId;
                 controlJuego.volverMenu();
             }
             else
             {
-                Debug.Log("task error");
+                if (registroTask.Exception.GetBaseException().Message.Equals("The email address is already in use by another account."))
+                {
+                    errorRegistro.text = "Este correo  ya está en uso";
+                }
+
+                Debug.Log(registroTask.Exception.GetBaseException().Message);
             }
 
         }
