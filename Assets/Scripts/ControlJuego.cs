@@ -21,6 +21,8 @@ public class ControlJuego : MonoBehaviour
     public GameObject menuPerder;
     public GameObject menuGanar;
     public bool seguir = true;
+    
+
 
     static public string userid;
 
@@ -30,29 +32,28 @@ public class ControlJuego : MonoBehaviour
 
 
     private void Awake()
-    {              
+    {
+        
+            reference = FirebaseDatabase.DefaultInstance.RootReference;
 
-        reference = FirebaseDatabase.DefaultInstance.RootReference;
-
-        if (SceneManager.GetActiveScene().name == "Menu")
-        {
-            FirebaseDatabase.DefaultInstance.GetReference("users").Child(userid).GetValueAsync().ContinueWith(task =>
+            if (SceneManager.GetActiveScene().name == "Menu")
             {
-                if (task.IsCompleted)
+                FirebaseDatabase.DefaultInstance.GetReference("users").Child(userid).GetValueAsync().ContinueWith(task =>
                 {
-                    
-                    DataSnapshot snapshot = task.Result;
-                    
-                 
-                   nivelesDesbloqueados =  int.Parse(snapshot.Child("nivelesSuperados").GetRawJsonValue());
+                    if (task.IsCompleted)
+                    {
+
+                        DataSnapshot snapshot = task.Result;
 
 
-
-                    ActualizarBotonesMenu();
-                }
-            });
-           
-        }
+                        nivelesDesbloqueados = int.Parse(snapshot.Child("nivelesSuperados").GetRawJsonValue());
+                        ActualizarBotonesMenu();
+                        
+                    }
+                });
+            }
+        
+       
 
     }
 
@@ -72,6 +73,7 @@ public class ControlJuego : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Menu")
         {
+            Debug.Log(nivelesDesbloqueados.ToString());  
             ActualizarBotonesMenu();
         }
 
@@ -93,11 +95,8 @@ public class ControlJuego : MonoBehaviour
 
                         if (seguir)
                         {
-                            Usuario usuario = new Usuario(nivelesDesbloqueados+1);
-                            string json = JsonUtility.ToJson(usuario);
-                            var prueba = reference.Child("users").Child(userid).SetRawJsonValueAsync(json);
-                           
 
+                            
                             DesbloquearNivel();
                             menuGanar.SetActive(true);
                         }
@@ -165,11 +164,16 @@ public class ControlJuego : MonoBehaviour
         if (nivelesDesbloqueados < nivelActual)
         {
             nivelesDesbloqueados = nivelActual;
-            //nivelActual++;
+            nivelActual++;
             seguir = false;
+            Usuario usuario = new Usuario(nivelesDesbloqueados);
+            string json = JsonUtility.ToJson(usuario);
+            var prueba = reference.Child("users").Child(userid).SetRawJsonValueAsync(json); 
         }
 
-        
+
+
+
     }
 
     public void volverMenu()
