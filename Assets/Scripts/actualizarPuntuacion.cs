@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class actualizarPuntuacion : MonoBehaviour
 {
-    Text txtPuntuacion;
+    public TMP_Text txtPuntuacion;
     public static int puntuacion;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        txtPuntuacion = GetComponent<Text> ();
+        //txtPuntuacion = GetComponent<Text> ();
         puntuacion = 0;
         
     }
