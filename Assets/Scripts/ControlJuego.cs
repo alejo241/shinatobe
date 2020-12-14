@@ -21,6 +21,7 @@ public class ControlJuego : MonoBehaviour
     public GameObject menuPerder;
     public GameObject menuGanar;
     public bool seguir = true;
+    public bool restarVida = true;
     
 
 
@@ -134,6 +135,15 @@ public class ControlJuego : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         menuPerder.SetActive(true);
+        if (restarVida)
+        {
+            actualizarVida.vida--;
+            restarVida = false;
+        }
+        if(actualizarVida.vida == 0)
+        {
+            volverMenu();
+        }
         
     }
 
