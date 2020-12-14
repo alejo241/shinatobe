@@ -1090,6 +1090,7 @@ MonoBehaviour:
   menuPerder: {fileID: 0}
   menuGanar: {fileID: 0}
   seguir: 1
+  restarVida: 1
 --- !u!4 &425989964
 Transform:
   m_ObjectHideFlags: 0
