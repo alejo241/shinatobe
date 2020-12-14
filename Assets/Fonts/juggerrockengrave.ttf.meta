@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: aca41d1857c2513438a18dae3c58f840
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Jugger Rock Shadow
+  fontNames:
+  - Jugger Rock Shadow
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: afd8f13264167ba41995df6397e2664e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
