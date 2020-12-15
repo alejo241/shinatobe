@@ -81,6 +81,7 @@ public class ControlJuego : MonoBehaviour
 
         if (dinosVivos.Length > 0)
         {
+
             if (comprobarDinosMuertos() == dinosVivos.Length)
             {
 
@@ -97,6 +98,7 @@ public class ControlJuego : MonoBehaviour
        
             if (meteoritosRestantes != null)
             {
+
                 if (meteoritosRestantes.Length > 0)
                 {
                 if (comprobarDinosVivos() > 0)
@@ -128,6 +130,7 @@ public class ControlJuego : MonoBehaviour
 
     private int comprobarDinosMuertos()
     {
+
         int c = 0;
         if (dinosVivos != null)
         {    
@@ -146,6 +149,7 @@ public class ControlJuego : MonoBehaviour
 
     private int comprobarDinosVivos()
     {
+
         int c = 0;
         if (dinosVivos != null)
         {
@@ -178,6 +182,7 @@ public class ControlJuego : MonoBehaviour
         if(actualizarVida.vida == 0)
         {
             volverMenu();
+
             actualizarVida.vida = 2;
         }
         
