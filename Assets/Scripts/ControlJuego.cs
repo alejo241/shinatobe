@@ -226,6 +226,8 @@ public class ControlJuego : MonoBehaviour
             Usuario usuario = new Usuario(nivelesDesbloqueados);
             string json = JsonUtility.ToJson(usuario);
             var prueba = reference.Child("users").Child(userid).SetRawJsonValueAsync(json); 
+
+
         }
 
 
