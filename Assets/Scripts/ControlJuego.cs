@@ -87,8 +87,9 @@ public class ControlJuego : MonoBehaviour
 
                 if (seguir)
                 {
-                    DesbloquearNivel();
                     menuGanar.SetActive(true);
+                    DesbloquearNivel();
+                    
                 }
             }
         }
@@ -183,7 +184,7 @@ public class ControlJuego : MonoBehaviour
         {
             volverMenu();
 
-            actualizarVida.vida = 2;
+            actualizarVida.vida = 4;
         }
         
     }
@@ -205,7 +206,12 @@ public class ControlJuego : MonoBehaviour
     {
         for (int i = 0; i < nivelesDesbloqueados+1; i++)
         {
-            botonesMenu[i].interactable = true;
+            
+            if(botonesMenu[i] != null)
+            {
+
+                botonesMenu[i].interactable = true;
+            }
         }
     }
 
@@ -237,4 +243,9 @@ public class ControlJuego : MonoBehaviour
 
         SceneManager.LoadScene(nivelActual);
     }
+    public void salirJuego()
+    {
+        Application.Quit();
+    }
+
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class actualizarVida : MonoBehaviour
 {
 
-    public static int vida = 2;
+    public static int vida = 4;
     public Text mostrarVida;
     // Start is called before the first frame update
     void Start()
