@@ -74,61 +74,96 @@ public class ControlJuego : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Menu")
         {
-            Debug.Log(nivelesDesbloqueados.ToString());  
+          
             ActualizarBotonesMenu();
         }
 
-        if(dinosVivos != null)
+
+        if (dinosVivos.Length > 0)
         {
-            if (dinosVivos.Length > 0)
+            if (comprobarDinosMuertos() == dinosVivos.Length)
             {
-                int c = 0;
-                for (int i = 0; i < dinosVivos.Length; i++)
+
+                if (seguir)
                 {
+                    DesbloquearNivel();
+                    menuGanar.SetActive(true);
+                }
+            }
+        }
 
-                    if (dinosVivos[i] == null)
+
+
+       
+            if (meteoritosRestantes != null)
+            {
+                if (meteoritosRestantes.Length > 0)
+                {
+                if (comprobarDinosVivos() > 0)
+                {
+                    int c = 0;
+                    for (int i = 0; i < meteoritosRestantes.Length; i++)
                     {
-                        c++;
-                    }
 
-                    if (c == dinosVivos.Length)
-                    {
+                        if (meteoritosRestantes[i] == null)
+                        {
+                            c++;
+                        }
 
-                        if (seguir)
+                        if (c == meteoritosRestantes.Length)
                         {
 
-                            
-                            DesbloquearNivel();
-                            menuGanar.SetActive(true);
+                            StartCoroutine(derrota());
+
                         }
                     }
                 }
+                   
+                }
+            }
+        
+      
+     
+    }
+
+    private int comprobarDinosMuertos()
+    {
+        int c = 0;
+        if (dinosVivos != null)
+        {    
+            for (int i = 0; i < dinosVivos.Length; i++)
+            {
+
+                if (dinosVivos[i] == null)
+                {
+                    c++;
+                }
             }
         }
- 
-        if(meteoritosRestantes != null)
+
+        return c;
+    }
+
+    private int comprobarDinosVivos()
+    {
+        int c = 0;
+        if (dinosVivos != null)
         {
-            if (meteoritosRestantes.Length > 0)
+            if (dinosVivos.Length > 0)
             {
-                int c = 0;
+
                 for (int i = 0; i < dinosVivos.Length; i++)
                 {
 
-                    if (meteoritosRestantes[i] == null)
+                    if (dinosVivos[i] != null)
                     {
                         c++;
-                    }
-
-                    if (c == meteoritosRestantes.Length)
-                    {
-
-                        StartCoroutine(derrota());
-                        
                     }
                 }
             }
         }
-     
+
+        return c;
     }
 
     IEnumerator derrota()
@@ -143,6 +178,7 @@ public class ControlJuego : MonoBehaviour
         if(actualizarVida.vida == 0)
         {
             volverMenu();
+            actualizarVida.vida = 2;
         }
         
     }
@@ -188,7 +224,7 @@ public class ControlJuego : MonoBehaviour
 
     public void volverMenu()
     {
-        cambiarNivel(0);
+        cambiarNivel(1);
     }
 
     public void mismoNivel()
