@@ -2669,8 +2669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntoMaximo: {fileID: 1222929474}
   rangoTirachinas: 1
-  velocidadMaxima: 50
-  meteorito: 1
+  velocidadMaxima: 35
+  meteorito: 0
   siguienteMeteorito: {fileID: 0}
   meteoritoActual: {fileID: 0}
 --- !u!50 &1143219232
@@ -5017,8 +5017,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puntoMaximo: {fileID: 1222929474}
   rangoTirachinas: 1
-  velocidadMaxima: 50
-  meteorito: 1
+  velocidadMaxima: 35
+  meteorito: 0
   siguienteMeteorito: {fileID: 1143219230}
   meteoritoActual: {fileID: 0}
 --- !u!1 &1837713822
