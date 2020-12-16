@@ -37,7 +37,7 @@ public class ControlJuego : MonoBehaviour
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference;
       
-            if (SceneManager.GetActiveScene().name == "Menu")
+            if (SceneManager.GetActiveScene().name != "Login")
             {
                 FirebaseDatabase.DefaultInstance.GetReference("users").Child(userid).GetValueAsync().ContinueWith(task =>
                 {
@@ -112,6 +112,9 @@ public class ControlJuego : MonoBehaviour
                 {
                     seguir = false;
                     StartCoroutine(victoria());
+
+                   
+
                 }
             }
         }
@@ -201,8 +204,27 @@ public class ControlJuego : MonoBehaviour
         {           
             victoriaFinal.SetActive(true);
         }
-      
-        
+        ActualizarNivelesDesbloqueados();
+        if (snapshot.HasChild(nivelActual.ToString()))
+        {
+            if (leerPuntuacion() < actualizarPuntuacion.puntuacion)
+            {
+                ActualizarPuntuacion();
+            }
+
+        }
+        else
+        {
+            ActualizarPuntuacion();
+        }
+
+
+
+
+
+
+
+
     }
 
 
@@ -274,22 +296,25 @@ public class ControlJuego : MonoBehaviour
         if (nivelesDesbloqueados < nivelActual)
         {
             nivelesDesbloqueados = nivelActual;
-            ActualizarNivelesDesbloqueados();
+            ActualizarNivelesDesbloqueados();         
           
-            Dictionary<string, object> puntuacionNivel = new Dictionary<string, object>();
-            puntuacionNivel.Add("puntuacionMaxima", actualizarPuntuacion.puntuacion);
-            Dictionary<string, object> test = new Dictionary<string, object>();
-            test.Add(nivelActual.ToString(), puntuacionNivel);
-            reference.Child("users").Child(userid).Child(nivelActual.ToString()).UpdateChildrenAsync(puntuacionNivel);           
-
         }
 
     }
 
+    private int leerPuntuacion()
+    {
+        return int.Parse(snapshot.Child(nivelActual.ToString()).Child("puntuacionMaxima").GetRawJsonValue().ToString());
+    }
+
     public void ActualizarPuntuacion()
     {
-        
 
+        Dictionary<string, object> puntuacionNivel = new Dictionary<string, object>();
+        puntuacionNivel.Add("puntuacionMaxima", actualizarPuntuacion.puntuacion);
+        Dictionary<string, object> test = new Dictionary<string, object>();
+        test.Add(nivelActual.ToString(), puntuacionNivel);
+        reference.Child("users").Child(userid).Child(nivelActual.ToString()).UpdateChildrenAsync(puntuacionNivel);
 
 
     }
