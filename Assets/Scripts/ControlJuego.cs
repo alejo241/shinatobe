@@ -199,6 +199,7 @@ public class ControlJuego : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         menuGanar.SetActive(true);
+
         DesbloquearNivel();
         if(nivelActual == 6)
         {           
@@ -211,7 +212,6 @@ public class ControlJuego : MonoBehaviour
             {
                 ActualizarPuntuacion();
             }
-
         }
         else
         {

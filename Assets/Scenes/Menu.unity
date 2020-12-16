@@ -1541,7 +1541,7 @@ MonoBehaviour:
   menuGanar: {fileID: 0}
   seguir: 1
   restarVida: 0
-  restarvida: 1
+  victoriaFinal: {fileID: 0}
 --- !u!4 &1319183391
 Transform:
   m_ObjectHideFlags: 0
