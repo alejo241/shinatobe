@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
-using Firebase.Extensions;
 using TMPro;
-using UnityEditor.PackageManager;
-using Firebase.Database;
-using UnityEngine.Events;
+
 
 public class AuthManager : MonoBehaviour
 {

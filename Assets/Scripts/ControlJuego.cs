@@ -23,6 +23,7 @@ public class ControlJuego : MonoBehaviour
     public bool seguir = true;
     public bool restarVida = true;
     
+    public bool restarvida = true;
 
 
     static public string userid;
@@ -64,9 +65,10 @@ public class ControlJuego : MonoBehaviour
         if(dinosVivos != null)
         {
             Enemigos = dinosVivos.Length;
+
         }
-       
-      
+
+
     }
 
     // Update is called once per frame
@@ -93,8 +95,6 @@ public class ControlJuego : MonoBehaviour
                 }
             }
         }
-
-
 
        
             if (meteoritosRestantes != null)
@@ -163,7 +163,9 @@ public class ControlJuego : MonoBehaviour
                     if (dinosVivos[i] != null)
                     {
                         c++;
+                        
                     }
+
                 }
             }
         }
@@ -186,7 +188,7 @@ public class ControlJuego : MonoBehaviour
 
             actualizarVida.vida = 4;
         }
-        
+
     }
 
     public void cambiarNivel(int nivel)

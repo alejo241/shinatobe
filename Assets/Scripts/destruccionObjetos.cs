@@ -54,21 +54,21 @@ public class destruccionObjetos : MonoBehaviour
 
                 Destroy(go, 3);
 
-                //EnemigosVivos--;
-              
+
             }
 
+           
+
             Destroy(gameObject, 0.1f);
+            Destroy(ultimoDino);
 
             
-
-         
         }
         else
         {
             resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
-            
-            if(siguientedino != null)
+
+            if (siguientedino != null)
             {
                 if (gameObject.tag == "dino" && resistenciaMaterial < 49 && resistenciaMaterial >= 25)
                 {
@@ -78,94 +78,48 @@ public class destruccionObjetos : MonoBehaviour
 
                 }
             }
-         
-          
+
+
             if (gameObject.tag == "dino" && resistenciaMaterial < 25)
             {
-                if(ultimoDino  != null)
+                if (ultimoDino != null)
                 {
                     ultimoDino.GetComponent<destruccionObjetos>().resistenciaMaterial = resistenciaMaterial;
                     ultimoDino.SetActive(true);
-                    if(actualDino != null)
+                    if (actualDino != null)
                     {
                         actualDino.SetActive(false);
+
+
                     }
-                   
+
 
                 }
-             
-                
 
             }
-
 
         }
 
 
     }
+   
 
     private void OnDestroy()
-    {
+    { 
         if (gameObject.tag == "dino")
-        {
+            {
+
+            Debug.Log("dino");
             actualizarPuntuacion.puntuacion += 25000;
+
         }
         else
         {
+            Debug.Log("caja");
             actualizarPuntuacion.puntuacion += 500;
         }
     }
+        
 
-
-    public void Destruir(Collision2D collision)
-    {
-        if (collision.relativeVelocity.magnitude > resistenciaMaterial)
-        {
-
-            if (explosion != null)
-            {
-                var go = Instantiate(explosion, transform.position, Quaternion.identity);
-               //actualizarPuntuacion.puntuacion += 500;
-                Destroy(go, 3);
-             
-            }
-
-            Destroy(gameObject, 0.1f);
-        }
-        else
-        {
-            resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
-        }
-    }
-
-    /*[MethodImpl(MethodImplOptions.Synchronized)]
-    public void DestruirDino(Collision2D collision)
-    {
-        if (collision.relativeVelocity.magnitude > resistenciaMaterial)
-        {
-
-            if (explosion != null)
-            {
-                var go = Instantiate(explosion, transform.position, Quaternion.identity);
-
-                Destroy(go, 3);
-
-                EnemigosVivos--;
-               actualizarPuntuacion.puntuacion += 25000;
-
-                if (EnemigosVivos == 0)
-                {
-                    controlJuego.DesbloquearNivel();
-                }
-            }
-
-            Destroy(gameObject, 0.1f);
-        }
-        else
-        {
-            resistenciaMaterial = resistenciaMaterial - collision.relativeVelocity.magnitude;
-
-           
-        }
-    }*/
+    
 }
