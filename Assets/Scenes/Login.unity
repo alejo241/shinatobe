@@ -1085,13 +1085,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nivelActual: -1
   botonesMenu: []
+  puntuacionesMax: []
   dinosVivos: []
   meteoritosRestantes: []
   menuPerder: {fileID: 0}
   menuGanar: {fileID: 0}
   seguir: 1
   restarVida: 1
-  restarvida: 1
 --- !u!4 &425989964
 Transform:
   m_ObjectHideFlags: 0
@@ -2062,7 +2062,7 @@ GameObject:
   - component: {fileID: 1006990382}
   - component: {fileID: 1006990381}
   m_Layer: 10
-  m_Name: TextMesh Pro - Text
+  m_Name: appTitulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5461,7 +5461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 4
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1657759752}
     m_SelectOnDown: {fileID: 1657759752}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}

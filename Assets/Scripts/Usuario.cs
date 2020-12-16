@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Usuario
 {
-    //public string correo;
-    public int nivelesSuperados;
+    public int puntuacionNivel;
 
     public Usuario()
     {
     }
 
-    public Usuario(int nivelesSuperados)
+    public Usuario(int puntuacionNivel)
     {      
-        this.nivelesSuperados = nivelesSuperados;   
+        this.puntuacionNivel = puntuacionNivel;
     }
+
 
 }

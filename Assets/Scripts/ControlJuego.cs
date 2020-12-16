@@ -3,27 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using JetBrains.Annotations;
 using Firebase.Database;
-using Firebase;
+using TMPro;
+
 
 public class ControlJuego : MonoBehaviour
 {
-
-
     static public int nivelesDesbloqueados;
     public int nivelActual;
     public Button[] botonesMenu;
+    public TMP_Text[] puntuacionesMax;
     public static int Enemigos;
     public GameObject[] dinosVivos;
     public GameObject[] meteoritosRestantes;
     public static int Meteoritos;
     public GameObject menuPerder;
     public GameObject menuGanar;
-    public bool seguir = true;
+    public bool seguir = true;    
     public bool restarVida = true;
-    
-    public bool restarvida = true;
+    public GameObject victoriaFinal;
 
 
     static public string userid;
@@ -31,42 +29,65 @@ public class ControlJuego : MonoBehaviour
     //base de datos
     [Header("Database")]
     DatabaseReference reference;
+    DataSnapshot snapshot;
+    FirebaseDatabase database;
 
 
     private void Awake()
     {
-        
-            reference = FirebaseDatabase.DefaultInstance.RootReference;
-
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
+      
             if (SceneManager.GetActiveScene().name == "Menu")
             {
                 FirebaseDatabase.DefaultInstance.GetReference("users").Child(userid).GetValueAsync().ContinueWith(task =>
                 {
                     if (task.IsCompleted)
                     {
-
-                        DataSnapshot snapshot = task.Result;
-
-
-                        nivelesDesbloqueados = int.Parse(snapshot.Child("nivelesSuperados").GetRawJsonValue());
-                        ActualizarBotonesMenu();
-                        
+                        snapshot = task.Result;
                     }
                 });
+            }             
+
+    }
+
+    IEnumerator actualizarMenu()
+    {
+        yield return new WaitForSeconds(0f);
+        if (snapshot.HasChild("nivelesDesbloqueados"))
+        {
+            nivelesDesbloqueados = int.Parse(snapshot.Child("nivelesDesbloqueados").GetRawJsonValue());
+            int indiceNivel = 2;
+           
+            for (int i = 0; i < nivelesDesbloqueados - 1; i++)
+            {
+                puntuacionesMax[i].SetText(snapshot.Child(indiceNivel.ToString()).Child("puntuacionMaxima").GetRawJsonValue().ToString());
+                indiceNivel++;
             }
-        
+            
+        }
        
+      
+        
+        
+
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        if(dinosVivos != null)
+        if (dinosVivos != null)
         {
             Enemigos = dinosVivos.Length;
 
         }
+
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            StartCoroutine(actualizarMenu());
+
+        }
+
 
 
     }
@@ -76,8 +97,8 @@ public class ControlJuego : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Menu")
         {
-          
-            ActualizarBotonesMenu();
+           
+            ActualizarBotonesMenu();           
         }
 
 
@@ -89,9 +110,8 @@ public class ControlJuego : MonoBehaviour
 
                 if (seguir)
                 {
-                    menuGanar.SetActive(true);
-                    DesbloquearNivel();
-                    
+                    seguir = false;
+                    StartCoroutine(victoria());
                 }
             }
         }
@@ -172,10 +192,24 @@ public class ControlJuego : MonoBehaviour
 
         return c;
     }
+    IEnumerator victoria()
+    {
+        yield return new WaitForSeconds(1.5f);
+        menuGanar.SetActive(true);
+        DesbloquearNivel();
+        if(nivelActual == 6)
+        {           
+            victoriaFinal.SetActive(true);
+        }
+      
+        
+    }
+
+
 
     IEnumerator derrota()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.5f);
         menuPerder.SetActive(true);
         if (restarVida)
         {
@@ -206,16 +240,33 @@ public class ControlJuego : MonoBehaviour
 
     public void ActualizarBotonesMenu() 
     {
-        for (int i = 0; i < nivelesDesbloqueados+1; i++)
+        if(nivelesDesbloqueados > botonesMenu.Length)
         {
-            
-            if(botonesMenu[i] != null)
+            nivelesDesbloqueados = botonesMenu.Length;
+            for (int i = 0; i < nivelesDesbloqueados; i++)
             {
+                if (botonesMenu[i] != null)
+                {
 
-                botonesMenu[i].interactable = true;
+                    botonesMenu[i].interactable = true;
+                }
             }
         }
+        else
+        {
+            for (int i = 0; i < nivelesDesbloqueados; i++)
+            {
+                if (botonesMenu[i] != null)
+                {
+
+                    botonesMenu[i].interactable = true;
+                }
+            }
+        }
+       
     }
+
+ 
 
     public void DesbloquearNivel()
     {
@@ -223,17 +274,33 @@ public class ControlJuego : MonoBehaviour
         if (nivelesDesbloqueados < nivelActual)
         {
             nivelesDesbloqueados = nivelActual;
-            nivelActual++;
-            seguir = false;
-            Usuario usuario = new Usuario(nivelesDesbloqueados);
-            string json = JsonUtility.ToJson(usuario);
-            var prueba = reference.Child("users").Child(userid).SetRawJsonValueAsync(json); 
-
+            ActualizarNivelesDesbloqueados();
+          
+            Dictionary<string, object> puntuacionNivel = new Dictionary<string, object>();
+            puntuacionNivel.Add("puntuacionMaxima", actualizarPuntuacion.puntuacion);
+            Dictionary<string, object> test = new Dictionary<string, object>();
+            test.Add(nivelActual.ToString(), puntuacionNivel);
+            reference.Child("users").Child(userid).Child(nivelActual.ToString()).UpdateChildrenAsync(puntuacionNivel);           
 
         }
 
+    }
+
+    public void ActualizarPuntuacion()
+    {
+        
 
 
+
+    }
+
+    public void ActualizarNivelesDesbloqueados()
+    {      
+        Dictionary<string, object> nivelesDesbloqueadosDi = new Dictionary<string, object>();
+        nivelesDesbloqueadosDi.Add("nivelesDesbloqueados", nivelesDesbloqueados);
+        reference.Child("users").Child(userid).UpdateChildrenAsync(nivelesDesbloqueadosDi);
+
+        
 
     }
 

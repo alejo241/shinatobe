@@ -15,30 +15,9 @@ public class destruccionObjetos : MonoBehaviour
     public Boolean nivelTerminado = false;
     public Boolean dino; 
     public Text txtPuntuacion;
-    ControlJuego controlJuego;
     public GameObject actualDino;
     public GameObject siguientedino;
     public GameObject ultimoDino;
-
-
-
-
-    public void Awake()
-    {
-        controlJuego = GameObject.Find("ControlJuego").GetComponent(typeof(ControlJuego)) as ControlJuego;
-    }
-
-    private void Start()
-    {
-       
-    }
-
-    private void Update()
-    {
-
-
-
-    }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -88,8 +67,8 @@ public class destruccionObjetos : MonoBehaviour
                     ultimoDino.SetActive(true);
                     if (actualDino != null)
                     {
-                        actualDino.SetActive(false);
 
+                        actualDino.SetActive(false);
 
                     }
 
@@ -107,15 +86,12 @@ public class destruccionObjetos : MonoBehaviour
     private void OnDestroy()
     { 
         if (gameObject.tag == "dino")
-            {
-
-            Debug.Log("dino");
+        {
             actualizarPuntuacion.puntuacion += 25000;
 
         }
         else
         {
-            Debug.Log("caja");
             actualizarPuntuacion.puntuacion += 500;
         }
     }

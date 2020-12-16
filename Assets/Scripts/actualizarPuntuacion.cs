@@ -13,7 +13,6 @@ public class actualizarPuntuacion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //txtPuntuacion = GetComponent<Text> ();
         puntuacion = 0;
         
     }
@@ -22,7 +21,7 @@ public class actualizarPuntuacion : MonoBehaviour
     void Update()
     {
         txtPuntuacion.text = "Score: " + puntuacion.ToString();
-        //prueba de github
+       
 
     }
 

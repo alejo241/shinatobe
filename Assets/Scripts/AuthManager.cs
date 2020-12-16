@@ -54,6 +54,8 @@ public class AuthManager : MonoBehaviour
             {
                 //si existen
                 auth = FirebaseAuth.DefaultInstance;
+               
+
              
 
             }
@@ -123,6 +125,13 @@ public class AuthManager : MonoBehaviour
                 if (registroTask.Exception.GetBaseException().Message.Equals("The email address is already in use by another account."))
                 {
                     errorRegistro.text = "Este correo  ya está en uso";
+                }else if (registroTask.Exception.GetBaseException().Message.Equals("The given password is invalid."))
+                {
+                    errorRegistro.text = "Contraseña invalida";
+                }
+                else
+                {
+                    errorRegistro.text = registroTask.Exception.GetBaseException().Message;
                 }
 
                 Debug.Log(registroTask.Exception.GetBaseException().Message);

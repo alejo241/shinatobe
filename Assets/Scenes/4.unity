@@ -1417,12 +1417,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247133085}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.066, y: 2.09, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 289.18112, y: -577.3462, z: 13.456686}
   m_LocalScale: {x: 1.0081359, y: 0.979, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 526805695}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &252627937
 GameObject:
@@ -2648,6 +2648,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524952144}
   m_CullTransparentMesh: 0
+--- !u!1 &526805694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 526805695}
+  m_Layer: 0
+  m_Name: torre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &526805695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526805694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -272.1151, y: 579.4362, z: -13.456686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 765828457}
+  - {fileID: 1535834216}
+  - {fileID: 247133088}
+  - {fileID: 677224913}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &562077759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,12 +3154,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677224910}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.82, y: 1.84, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 291.93512, y: -577.5962, z: 13.456686}
   m_LocalScale: {x: 0.874, y: 0.975, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 526805695}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742074768
 GameObject:
@@ -3329,12 +3363,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765828454}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.314, y: -4.19, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 289.4291, y: -583.6262, z: 13.456686}
   m_LocalScale: {x: 0.97622395, y: 1.177, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 526805695}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &800799369
 GameObject:
@@ -4426,13 +4460,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nivelActual: 0
   botonesMenu: []
+  puntuacionesMax: []
   dinosVivos: []
   meteoritosRestantes: []
   menuPerder: {fileID: 1195022610}
   menuGanar: {fileID: 2110074006}
   seguir: 1
   restarVida: 1
-  restarvida: 1
 --- !u!95 &1195022616
 Animator:
   serializedVersion: 3
@@ -4638,6 +4672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nivelActual: 5
   botonesMenu: []
+  puntuacionesMax: []
   dinosVivos:
   - {fileID: 800799369}
   - {fileID: 5874114}
@@ -4648,7 +4683,6 @@ MonoBehaviour:
   menuGanar: {fileID: 2110074006}
   seguir: 1
   restarVida: 1
-  restarvida: 1
 --- !u!4 &1230139230
 Transform:
   m_ObjectHideFlags: 0
@@ -5470,12 +5504,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535834213}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.617, y: -4.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 291.73212, y: -583.6362, z: 13.456686}
   m_LocalScale: {x: 0.883, y: 1.186, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 526805695}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1674345312
 GameObject:
@@ -7826,13 +7860,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nivelActual: 0
   botonesMenu: []
+  puntuacionesMax: []
   dinosVivos: []
   meteoritosRestantes: []
   menuPerder: {fileID: 1195022610}
   menuGanar: {fileID: 2110074006}
   seguir: 1
   restarVida: 1
-  restarvida: 1
 --- !u!114 &2110074010
 MonoBehaviour:
   m_ObjectHideFlags: 0
