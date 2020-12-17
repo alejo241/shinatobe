@@ -12,7 +12,7 @@ public class AuthManager : MonoBehaviour
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
-    public FirebaseAuth auth;
+    public static FirebaseAuth auth;
     public FirebaseUser userFU;
 
     //Login variables
@@ -65,6 +65,7 @@ public class AuthManager : MonoBehaviour
             
         });
     }
+
 
     public void LoginButton()
     {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Firebase.Database;
 using TMPro;
-
+using System;
 
 public class ControlJuego : MonoBehaviour
 {
@@ -36,6 +36,7 @@ public class ControlJuego : MonoBehaviour
     private void Awake()
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference;
+        nivelesDesbloqueados = 0;
       
             if (SceneManager.GetActiveScene().name != "Login")
             {
@@ -43,7 +44,11 @@ public class ControlJuego : MonoBehaviour
                 {
                     if (task.IsCompleted)
                     {
-                        snapshot = task.Result;
+                        snapshot = task.Result;                        
+                    }
+                    else
+                    {
+                        Debug.Log("error al tomar  la snapshot");
                     }
                 });
             }           
@@ -62,8 +67,8 @@ public class ControlJuego : MonoBehaviour
         }
 
         if (SceneManager.GetActiveScene().name == "Menu")
-        {
-            StartCoroutine(actualizarMenu());
+        {      
+            StartCoroutine(actualizarMenu());           
 
         }
 
@@ -89,7 +94,7 @@ public class ControlJuego : MonoBehaviour
 
                 if (seguir)
                 {
-                    seguir = false;
+                    seguir = false;                   
                     StartCoroutine(victoria());
 
                    
@@ -133,7 +138,8 @@ public class ControlJuego : MonoBehaviour
 
     IEnumerator actualizarMenu()
     {
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(0.2f);
+        
         if (snapshot.HasChild("nivelesDesbloqueados"))
         {
             nivelesDesbloqueados = int.Parse(snapshot.Child("nivelesDesbloqueados").GetRawJsonValue());
@@ -145,9 +151,9 @@ public class ControlJuego : MonoBehaviour
                 indiceNivel++;
             }
 
-        }
-
+        }       
     }
+
 
     private int comprobarDinosMuertos()
     {
@@ -238,7 +244,7 @@ public class ControlJuego : MonoBehaviour
 
     public void cambiarNivel(int nivel)
     {
-        if(nivel == 0)
+        if(nivel == 1)
         {
             SceneManager.LoadScene("Menu");
         }
@@ -319,6 +325,11 @@ public class ControlJuego : MonoBehaviour
         cambiarNivel(1);
     }
 
+    public void volverLogin()
+    {
+        cambiarNivel(0);
+    }
+
     public void mismoNivel()
     {
 
@@ -327,6 +338,13 @@ public class ControlJuego : MonoBehaviour
     public void salirJuego()
     {
         Application.Quit();
+    }
+
+
+    public void cerrarSesion()
+    {
+        AuthManager.auth.SignOut();
+        volverLogin();
     }
 
 }
