@@ -4240,7 +4240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cb7d854c7e6c549a187601f3b83855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntoMaximo: {fileID: 1222929474}
+  puntoMedio: {fileID: 1222929474}
   rangoTirachinas: 1
   velocidadMaxima: 50
   meteorito: 1
@@ -4467,6 +4467,7 @@ MonoBehaviour:
   menuGanar: {fileID: 2110074006}
   seguir: 1
   restarVida: 1
+  victoriaFinal: {fileID: 0}
 --- !u!95 &1195022616
 Animator:
   serializedVersion: 3
@@ -4621,7 +4622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222929474}
   m_Layer: 0
-  m_Name: puntoMaximo
+  m_Name: puntoMedio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4683,6 +4684,7 @@ MonoBehaviour:
   menuGanar: {fileID: 2110074006}
   seguir: 1
   restarVida: 1
+  victoriaFinal: {fileID: 0}
 --- !u!4 &1230139230
 Transform:
   m_ObjectHideFlags: 0
@@ -6644,7 +6646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5cb7d854c7e6c549a187601f3b83855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntoMaximo: {fileID: 1222929474}
+  puntoMedio: {fileID: 1222929474}
   rangoTirachinas: 1
   velocidadMaxima: 50
   meteorito: 1
@@ -7867,6 +7869,7 @@ MonoBehaviour:
   menuGanar: {fileID: 2110074006}
   seguir: 1
   restarVida: 1
+  victoriaFinal: {fileID: 0}
 --- !u!114 &2110074010
 MonoBehaviour:
   m_ObjectHideFlags: 0

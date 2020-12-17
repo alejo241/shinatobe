@@ -30,7 +30,7 @@ public class ControlJuego : MonoBehaviour
     [Header("Database")]
     DatabaseReference reference;
     DataSnapshot snapshot;
-    FirebaseDatabase database;
+  
 
 
     private void Awake()
@@ -46,32 +46,11 @@ public class ControlJuego : MonoBehaviour
                         snapshot = task.Result;
                     }
                 });
-            }             
+            }           
 
     }
 
-    IEnumerator actualizarMenu()
-    {
-        yield return new WaitForSeconds(0f);
-        if (snapshot.HasChild("nivelesDesbloqueados"))
-        {
-            nivelesDesbloqueados = int.Parse(snapshot.Child("nivelesDesbloqueados").GetRawJsonValue());
-            int indiceNivel = 2;
-           
-            for (int i = 0; i < nivelesDesbloqueados - 1; i++)
-            {
-                puntuacionesMax[i].SetText(snapshot.Child(indiceNivel.ToString()).Child("puntuacionMaxima").GetRawJsonValue().ToString());
-                indiceNivel++;
-            }
-            
-        }
-       
-      
-        
-        
 
-
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -152,6 +131,24 @@ public class ControlJuego : MonoBehaviour
      
     }
 
+    IEnumerator actualizarMenu()
+    {
+        yield return new WaitForSeconds(0f);
+        if (snapshot.HasChild("nivelesDesbloqueados"))
+        {
+            nivelesDesbloqueados = int.Parse(snapshot.Child("nivelesDesbloqueados").GetRawJsonValue());
+            int indiceNivel = 2;
+
+            for (int i = 0; i < nivelesDesbloqueados - 1; i++)
+            {
+                puntuacionesMax[i].SetText(snapshot.Child(indiceNivel.ToString()).Child("puntuacionMaxima").GetRawJsonValue().ToString());
+                indiceNivel++;
+            }
+
+        }
+
+    }
+
     private int comprobarDinosMuertos()
     {
 
@@ -217,14 +214,6 @@ public class ControlJuego : MonoBehaviour
         {
             ActualizarPuntuacion();
         }
-
-
-
-
-
-
-
-
     }
 
 
@@ -292,14 +281,12 @@ public class ControlJuego : MonoBehaviour
 
     public void DesbloquearNivel()
     {
-
         if (nivelesDesbloqueados < nivelActual)
         {
             nivelesDesbloqueados = nivelActual;
-            ActualizarNivelesDesbloqueados();         
+                
           
         }
-
     }
 
     private int leerPuntuacion()
@@ -311,9 +298,7 @@ public class ControlJuego : MonoBehaviour
     {
 
         Dictionary<string, object> puntuacionNivel = new Dictionary<string, object>();
-        puntuacionNivel.Add("puntuacionMaxima", actualizarPuntuacion.puntuacion);
-        Dictionary<string, object> test = new Dictionary<string, object>();
-        test.Add(nivelActual.ToString(), puntuacionNivel);
+        puntuacionNivel.Add("puntuacionMaxima", actualizarPuntuacion.puntuacion);        
         reference.Child("users").Child(userid).Child(nivelActual.ToString()).UpdateChildrenAsync(puntuacionNivel);
 
 

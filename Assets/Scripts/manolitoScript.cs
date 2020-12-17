@@ -4,38 +4,30 @@ using System;
 
 public class manolitoScript : MonoBehaviour
 {
-    public Transform puntoMaximo;
+    public Transform puntoMedio;
     public float rangoTirachinas;
-    public float velocidadMaxima;
-    public static int MeteoritosRestantes = 0;
+    public float velocidadMaxima;  
     public Boolean meteorito;
     public GameObject siguienteMeteorito;
-    public GameObject meteoritoActual;
+    GameObject meteoritoActual;
 
 
     bool lanzado = false;
     Vector3 dis;
     Rigidbody2D rb;
-    ControlJuego controlJuego;
-
+ 
 
     private void Awake()
-    {
-        controlJuego = GameObject.Find("ControlJuego").GetComponent(typeof(ControlJuego)) as ControlJuego;
+    {        
         lanzado = false;
-
     }
 
     void Start()
     {
         meteoritoActual = this.gameObject;
         rb = GetComponent<Rigidbody2D>();
-        rb.bodyType = RigidbodyType2D.Kinematic;
-     
-        if (meteorito)
-        {
-            MeteoritosRestantes++;     
-        }
+        rb.bodyType = RigidbodyType2D.Kinematic;     
+       
         if (siguienteMeteorito != null)
         {
             siguienteMeteorito.SetActive(false);
@@ -55,10 +47,7 @@ public class manolitoScript : MonoBehaviour
 
             StartCoroutine(destruirMeteorito());
            
-                if(MeteoritosRestantes == 0)
-                {
-                //controlJuego.volverMenu();
-                }
+                
             }
         
 
@@ -75,7 +64,7 @@ public class manolitoScript : MonoBehaviour
 
         var pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
-        dis = pos - puntoMaximo.position;//posicion relativa respecto al punto maximo
+        dis = pos - puntoMedio.position;//posicion relativa respecto al punto maximo
         dis.z = 0; // la z sobra porque el juego es en 2d
 
         if (dis.magnitude > rangoTirachinas)
@@ -83,7 +72,7 @@ public class manolitoScript : MonoBehaviour
             dis = dis.normalized * rangoTirachinas;
         }
 
-        transform.position = dis + puntoMaximo.position;
+        transform.position = dis + puntoMedio.position;
     }
 
     private void OnMouseUp()
@@ -110,8 +99,7 @@ public class manolitoScript : MonoBehaviour
     IEnumerator Release()
     {
         yield return new WaitForSeconds(0.5f);
-        siguienteMeteorito.SetActive(true);
-        //Destroy(gameObject);
+        siguienteMeteorito.SetActive(true);       
 
 
     }
@@ -119,9 +107,9 @@ public class manolitoScript : MonoBehaviour
     IEnumerator destruirMeteorito()
     {
         yield return new WaitForSeconds(2.0f);
-        // meteoritoActual.SetActive(false);
+        
         Destroy(meteoritoActual);
-        //Destroy(gameObject);
+        
 
 
     }

@@ -37,7 +37,6 @@ public class AuthManager : MonoBehaviour
 //Otras variables
 [Header("Otras variables")]
     public ControlJuego controlJuego;
-    Usuario usuario;
     
   
 
